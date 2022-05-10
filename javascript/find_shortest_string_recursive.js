@@ -1,5 +1,9 @@
-function findShortestStringRecursive(arr) {
-  // type your code here
+function findShortestStringRecursive(arr, shortWord = "iiiiiiiiiiiiiii") {
+  let result = arr.splice(0,1)[0]
+  //console.log(shortWord, result, arr.length)
+  if (result.length < shortWord.length) { shortWord = result} 
+  if (arr.length === 0) { return shortWord }
+  return findShortestStringRecursive(arr, shortWord)
 }
 
 if (require.main === module) {
